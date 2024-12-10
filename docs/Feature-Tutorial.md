@@ -7,7 +7,9 @@
     - gt-shapefile
     - gt-swing
     - gt-epsg-hsql
-- need [csv file](../src/main/resources/tutorial/locations.csv) to convert to shapefile
+- need [csv file](../src/main/resources/tutorial/feature/locations.csv) to convert to shapefile
+
+# Purpose: CSV to SHP
 
 ## 1. Define Schema (also called feature type)
 

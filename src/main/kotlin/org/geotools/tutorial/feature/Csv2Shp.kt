@@ -65,7 +65,7 @@ class Csv2Shp {
     }
 
     init {
-        val file = this::class.java.getResource("/tutorial/locations.csv")?.let { File(it.toURI()) }
+        val file = this::class.java.getResource("/tutorial/feature/locations.csv")?.let { File(it.toURI()) }
         requireNotNull(file) { "No file chosen" }
 
         println("AS-WAS TYPE: $AS_IS_TYPE")
