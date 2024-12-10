@@ -18,6 +18,7 @@ import org.geotools.swing.data.JFileDataStoreChooser
 import org.locationtech.jts.geom.Coordinate
 import org.locationtech.jts.geom.GeometryFactory
 import org.locationtech.jts.geom.Point
+import org.locationtech.jts.io.WKTReader
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -217,9 +218,29 @@ class Csv2Shp {
             transaction.close()
         }
     }
-}
 
-fun main() {
-    Csv2Shp()
-}
+    /**
+     * Create a Point object from a WKT string
+     *
+     * @param wkt the well-known text string. example: "POINT(45.0 49.0)"
+     * @return the Point object
+     */
+    fun createPointByWKT(wkt: String): Point {
+        val geometryFactory: GeometryFactory = JTSFactoryFinder.getGeometryFactory()
+        val reader = WKTReader(geometryFactory)
+        return reader.read(wkt) as Point
+    }
 
+    /**
+     * Create a Point object from a pair of coordinates
+
+     * @param lat the latitude
+     * @param long the longitude
+     * @return the Point object
+     */
+    fun createPointByCoordinate(lat: Double, long: Double): Point {
+        val geometryFactory: GeometryFactory = JTSFactoryFinder.getGeometryFactory()
+        val coordinate = Coordinate(lat, long)
+        return geometryFactory.createPoint(coordinate)
+    }
+}
