@@ -30,3 +30,14 @@ reference: https://docs.geotools.org/stable/userguide/tutorial/feature/csv2shp.h
     - create `Transaction` and set to `FeatureStore`
     - create `FeatureCollection` and add to `FeatureStore`
     - commit transaction will write to shapefile
+
+---
+
+## Other Things to try
+
+### Create FeatureType with builder
+
+- create `SimpleFeatureTypeBuilder` and add attributes
+    - default properties for featureType: name, crs ...
+    - additional properties of feature: geometry, attributes ...
+- `buildFeatureType` will create `SimpleFeatureType`
