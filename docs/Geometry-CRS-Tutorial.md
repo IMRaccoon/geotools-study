@@ -1,7 +1,7 @@
 > reference: https://docs.geotools.org/stable/userguide/tutorial/geometry/geometrycrs.html  
 > study code: [CRSLab.kt](../src/main/kotlin/org/geotools/tutorial/crs/CRSLab.kt)
 
-## 0. Pre-requisites
+## Pre-requisites
 
 - Add geotools dependencies to your project
     - gt-shapefile
@@ -40,3 +40,11 @@
     - Write features to shapefile by `FeatureWriter` and commit transaction.
     - During copy, transform original geometry to new CRS by `JTS.transform` method.
     - finally, close `FeatureWriter` and `Transaction`.
+
+## Other Things to try
+
+### Easy way to fix invalid geometry
+
+- easy place to start validate is to use `geometry.buffer(0)`
+- In `export` method, Use a `Query` object to retrieve the features write them to a new shapefile.
+    - Instead of transforming the features 'by hand' as we did in the previous example

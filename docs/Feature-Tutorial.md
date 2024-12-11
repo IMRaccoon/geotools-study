@@ -1,7 +1,7 @@
 > reference: https://docs.geotools.org/stable/userguide/tutorial/feature/csv2shp.html    
 > study code: [Csv2Shp.kt](../src/main/kotlin/org/geotools/tutorial/feature/Csv2Shp.kt)
 
-## 0. Pre-requisites
+## Pre-requisites
 
 - Add geotools dependencies to your project
     - gt-shapefile
@@ -11,11 +11,11 @@
 
 # Purpose: CSV to SHP
 
-## 1. Define Schema (also called feature type)
+## Define Schema (also called feature type)
 
 - defined Schema for the shapefile
 
-## 2. Read CSV file
+## Read CSV file
 
 - read csv file
 - generate feature from single row
@@ -23,7 +23,7 @@
     - other properties will be also save into feature
     - add all to `FeatureBuilder` and build feature
 
-## 3. Write to Shapefile
+## Write to Shapefile
 
 - create `ShapefileDataStore` to get feature source
     - create by `ShapefileDataStoreFactory.createDataStore` with `shp` file path
